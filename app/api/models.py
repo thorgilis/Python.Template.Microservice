@@ -1,7 +1,7 @@
 """API data models."""
 from pydantic import BaseModel, Field
 from typing import Optional
-from datetime import datetime
+from datetime import UTC, datetime
 from uuid import uuid4
 
 
@@ -27,7 +27,7 @@ class Item(ItemBase):
     """Item model with ID and timestamps."""
     
     id: str = Field(default_factory=generate_id)
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     updated_at: Optional[datetime] = None
 
     class Config:

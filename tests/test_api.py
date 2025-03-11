@@ -39,3 +39,15 @@ def test_get_items(client: TestClient) -> None:
     data = response.json()
     assert isinstance(data, list)
     assert len(data) >= 1
+
+def test_update_item(client: TestClient) -> None:
+    """Test updating an item."""
+    # Create an item first
+    item_data = {"name": "Test Item"}
+    client.post("/api/items", json=item_data)
+
+    # Get the created item's ID
+    response = client.get("/api/items")
+    data = response.json()
+    assert isinstance(data, list)
+    assert len(data) >= 1

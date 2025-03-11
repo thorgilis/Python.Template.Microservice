@@ -1,6 +1,6 @@
 """Service layer for business logic."""
 from typing import Dict, List, Optional
-from datetime import datetime
+from datetime import UTC, datetime
 
 from app.api.models import Item, ItemCreate
 
@@ -33,7 +33,7 @@ class ItemService:
         
         updated_item = self.items[item_id].copy(update={
             **item_data.model_dump(),
-            "updated_at": datetime.now(datetime.timezone.utc)
+            "updated_at": datetime.now(UTC)
         })
         
         self.items[item_id] = updated_item
