@@ -1,5 +1,7 @@
 """Logging configuration for the application."""
 import logging
+import logging.config
+
 import sys
 from typing import Any, Dict
 
