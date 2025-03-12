@@ -50,6 +50,4 @@ logs/
 
 .mypy_cache
 .pytest_cache
-.venv/*
-.venv/bin/Activate.ps1
-.venv/bin/undill
+.venv
