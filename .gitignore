@@ -47,3 +47,7 @@ ENV/
 # Logs
 logs/
 *.log
+
+.mypy_cache
+.pytest_cache
+.venv/*
