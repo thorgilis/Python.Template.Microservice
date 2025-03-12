@@ -18,6 +18,7 @@ warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
 disallow_incomplete_defs = true
+explicit_package_bases = true
 
 [tool.pylint.messages_control]
 disable = "C0111,R0903,C0103"
@@ -28,3 +29,6 @@ max-line-length = 88
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = "test_*.py"
+
+[tool.bandit]
+targets = ["app", "tests"]

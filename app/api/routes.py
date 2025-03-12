@@ -1,6 +1,8 @@
 """API routes definition."""
-from fastapi import APIRouter, Depends, HTTPException
+
 from typing import Dict, List
+
+from fastapi import APIRouter, Depends, HTTPException
 
 from app.api.models import Item, ItemCreate
 from app.services.service import ItemService, get_item_service
@@ -15,9 +17,7 @@ async def health_check() -> Dict[str, str]:
 
 
 @router.get("/items", response_model=List[Item])
-async def get_items(
-    service: ItemService = Depends(get_item_service)
-) -> List[Item]:
+async def get_items(service: ItemService = Depends(get_item_service)) -> List[Item]:
     """Get all items."""
     return service.get_all_items()
 

@@ -1,4 +1,5 @@
 """API tests."""
+
 from fastapi.testclient import TestClient
 
 
@@ -15,10 +16,10 @@ def test_create_item(client: TestClient) -> None:
         "name": "Test Item",
         "description": "This is a test item",
     }
-    
+
     response = client.post("/api/items", json=item_data)
     assert response.status_code == 201
-    
+
     data = response.json()
     assert data["name"] == item_data["name"]
     assert data["description"] == item_data["description"]
@@ -31,14 +32,15 @@ def test_get_items(client: TestClient) -> None:
     # Create an item first
     item_data = {"name": "Test Item"}
     client.post("/api/items", json=item_data)
-    
+
     # Get all items
     response = client.get("/api/items")
     assert response.status_code == 200
-    
+
     data = response.json()
     assert isinstance(data, list)
     assert len(data) >= 1
+
 
 def test_update_item(client: TestClient) -> None:
     """Test updating an item."""

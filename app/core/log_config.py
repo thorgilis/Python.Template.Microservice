@@ -1,7 +1,7 @@
 """Logging configuration for the application."""
+
 import logging
 import logging.config
-
 import sys
 from typing import Any, Dict
 
@@ -13,7 +13,7 @@ settings = get_settings()
 def setup_logging() -> None:
     """Set up logging configuration."""
     log_level = getattr(logging, settings.LOG_LEVEL)
-    
+
     logging_config: Dict[str, Any] = {
         "version": 1,
         "disable_existing_loggers": False,
@@ -34,5 +34,5 @@ def setup_logging() -> None:
             "app": {"handlers": ["console"], "level": log_level},
         },
     }
-    
+
     logging.config.dictConfig(logging_config)

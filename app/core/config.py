@@ -1,4 +1,5 @@
 """Configuration module for the application."""
+
 from functools import lru_cache
 from typing import Optional
 
@@ -12,17 +13,14 @@ class Settings(BaseSettings):
     APP_NAME: str = "microservice"
     DEBUG: bool = Field(default=False)
     API_PREFIX: str = "/api"
-    
+
     # Database
     DATABASE_URL: Optional[str] = None
-    
+
     # Logging
     LOG_LEVEL: str = "INFO"
-    
-    model_config = {
-        "env_file": ".env",
-        "case_sensitive": True
-    }
+
+    model_config = {"env_file": ".env", "case_sensitive": True}
 
 
 @lru_cache
