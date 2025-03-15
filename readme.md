@@ -97,8 +97,10 @@ python-microservice-template/
 │   └── services/         # Business logic
 ├── tests/                # Test files
 ├── .github/              # GitHub workflows
+├── .flake8               # Linter configuration
 ├── .gitignore            # Git ignore file
 ├── .pre-commit-config.yaml  # Pre-commit configuration
+├── bandit.yaml           # Bandit configuration
 ├── pyproject.toml        # Python project configuration
 ├── setup.py              # Package setup script
 ├── requirements.txt      # Production dependencies
