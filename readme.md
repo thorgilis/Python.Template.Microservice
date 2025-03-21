@@ -49,6 +49,11 @@ A production-ready template for building FastAPI microservices with best practic
    ```bash
    pre-commit install
    ```
+5. Setup configuration:
+   ```bash
+   cp .env.template .env
+   # Edit values as needed
+   ```
 
 ## ▶ Running the Application
 
@@ -70,12 +75,6 @@ pytest --cov=app tests/ --cov-report=xml
 ## 🔍 Running Linters
 ```bash
 pre-commit run --all-files
-```
-
-## 🔧 Setup Configuration
-```bash
-cp .env.template .env
-# Edit values as needed
 ```
 
 ## 📂 Project Structure
