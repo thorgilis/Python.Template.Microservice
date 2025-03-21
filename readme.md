@@ -70,7 +70,7 @@ docker-compose up --build
 ### Running Tests
 
 ```bash
-pytest
+pytest --cov=app tests/ --cov-report=xml
 ```
 
 ### Running Linters
