@@ -1,92 +1,84 @@
 # Python Microservice Template
 
-A template for creating Python microservices with a complete linting and code quality setup.
+A production-ready template for building FastAPI microservices with best practices in code quality, security, and deployment.
 
-## Features
+## 🚀 Features
 
-- FastAPI framework for high performance
-- Complete linting and code quality setup
-- Docker and Docker Compose configuration
-- GitHub Actions CI pipeline
-- Structured logging
-- Comprehensive test setup
+- **FastAPI** – High-performance Python web framework
+- **Code Quality & Linting** – Pre-configured tools for clean, maintainable code
+- **Docker & Docker Compose** – Easy containerization and deployment
+- **GitHub Actions CI** – Automated testing and linting
+- **Structured Logging** – Better observability
+- **Comprehensive Testing** – Preconfigured pytest setup
 
-## Code Quality Tools
+## 🛠 Code Quality Tools
 
-- **Black**: Code formatter
-- **isort**: Import sorter
-- **flake8**: Style guide enforcement
-- **mypy**: Static type checking
-- **pylint**: Code analysis
-- **bandit**: Security linter
-- **pre-commit**: Git hooks manager
+- **Black** – Code formatter
+- **isort** – Import sorter
+- **flake8** – Style guide enforcement
+- **mypy** – Static type checking
+- **pylint** – Code analysis
+- **bandit** – Security linter
+- **pre-commit** – Automate checks before committing
 
-## Getting Started
+## ⚡ Getting Started
 
 ### Prerequisites
 
 - Python 3.12+
-- Docker and Docker Compose (optional)
+- Docker & Docker Compose (optional)
 
 ### Installation
 
-1. Clone this repository:
+1. Clone the repo:
    ```bash
    git clone https://github.com/thorgilis/Python.Template.Microservice.git
    cd Python.Template.Microservice
    ```
-
 2. Set up a virtual environment:
    ```bash
    python -m venv .venv
    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
    ```
-
 3. Install dependencies:
    ```bash
    pip install -r requirements.txt
    pip install -r requirements-dev.txt
    ```
-
 4. Install pre-commit hooks:
    ```bash
    pre-commit install
    ```
 
-### Running the Application
+## ▶ Running the Application
 
-#### Local Development
-
+### Local Development
 ```bash
 uvicorn app.main:app --reload
 ```
 
-#### Using Docker
-
+### Using Docker
 ```bash
 docker-compose up --build
 ```
 
-### Running Tests
-
+## 🧪 Running Tests
 ```bash
 pytest --cov=app tests/ --cov-report=xml
 ```
 
-### Running Linters
-
+## 🔍 Running Linters
 ```bash
 pre-commit run --all-files
 ```
 
-### Setup Configuration
-
+## 🔧 Setup Configuration
 ```bash
 cp .env.template .env
-# Edit the values to suite your needs
+# Edit values as needed
 ```
 
-## Project Structure
+## 📂 Project Structure
 
 ```
 Python.Template.Microservice/
@@ -110,6 +102,6 @@ Python.Template.Microservice/
 └── docker-compose.yml       # Docker Compose configuration
 ```
 
-## License
+## 📜 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the **MIT License** – see the [LICENSE](./LICENSE) file for details.
