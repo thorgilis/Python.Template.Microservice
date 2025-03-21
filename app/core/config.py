@@ -19,29 +19,20 @@ class Settings(BaseSettings):
     DEBUG: bool = Field(default=False)
     API_PREFIX: str = "/api"
 
-    # Required field with no default
-    DATABASE_URL: str = Field(
-        ..., description="Database connection string"  # ... means required (no default)
-    )
-
-    # Logging
     LOG_LEVEL: str = "INFO"
 
-    # Environment type
     ENVIRONMENT: Literal["dev", "test", "prod"] = "dev"
 
 
 class TestSettings(Settings):
     """Test settings with test-specific overrides."""
 
-    model_config = SettingsConfigDict(
-        env_file=".env.test",  # Load from test-specific file
-        case_sensitive=True,
-        extra="ignore",
-    )
+    APP_NAME: str = "test"
+    DEBUG: bool = Field(default=False)
+    API_PREFIX: str = "/api"
 
-    DATABASE_URL: str = "sqlite:///./test.db"
-    DEBUG: bool = True
+    LOG_LEVEL: str = "INFO"
+
     ENVIRONMENT: Literal["dev", "test", "prod"] = "test"
 
 
