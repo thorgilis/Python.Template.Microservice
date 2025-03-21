@@ -79,10 +79,17 @@ pytest --cov=app tests/ --cov-report=xml
 pre-commit run --all-files
 ```
 
+### Setup Configuration
+
+```bash
+cp .env.template .env
+# Edit the values to suite your needs
+```
+
 ## Project Structure
 
 ```
-python-microservice-template/
+Python.Template.Microservice/
 ├── app/                     # Application code
 │   ├── api/                 # API routes and models
 │   ├── core/                # Core application components
