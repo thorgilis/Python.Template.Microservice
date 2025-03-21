@@ -32,14 +32,14 @@ A template for creating Python microservices with a complete linting and code qu
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/python-microservice-template.git
-   cd python-microservice-template
+   git clone https://github.com/thorgilis/Python.Template.Microservice.git
+   cd Python.Template.Microservice
    ```
 
 2. Set up a virtual environment:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
    ```
 
 3. Install dependencies:
@@ -76,37 +76,31 @@ pytest --cov=app tests/ --cov-report=xml
 ### Running Linters
 
 ```bash
-# Run all pre-commit hooks
 pre-commit run --all-files
-
-# Or run individual tools
-black .
-isort .
-flake8
-mypy .
-pylint app tests
 ```
 
 ## Project Structure
 
 ```
 python-microservice-template/
-├── app/                  # Application code
-│   ├── api/              # API routes and models
-│   ├── core/             # Core application components
-│   └── services/         # Business logic
-├── tests/                # Test files
-├── .github/              # GitHub workflows
-├── .flake8               # Linter configuration
-├── .gitignore            # Git ignore file
+├── app/                     # Application code
+│   ├── api/                 # API routes and models
+│   ├── core/                # Core application components
+│   └── services/            # Business logic
+├── tests/                   # Test files
+├── .github/
+│   └── workflows/
+│     └── ci.yml             # CI workflow configuration
+├── .flake8                  # Linter configuration
+├── .gitignore               # Git ignore file
 ├── .pre-commit-config.yaml  # Pre-commit configuration
-├── bandit.yaml           # Bandit configuration
-├── pyproject.toml        # Python project configuration
-├── setup.py              # Package setup script
-├── requirements.txt      # Production dependencies
-├── requirements-dev.txt  # Development dependencies
-├── Dockerfile            # Docker configuration
-└── docker-compose.yml    # Docker Compose configuration
+├── bandit.yaml              # Bandit configuration
+├── pyproject.toml           # Python project configuration
+├── setup.py                 # Package setup script
+├── requirements.txt         # Production dependencies
+├── requirements-dev.txt     # Development dependencies
+├── Dockerfile               # Docker configuration
+└── docker-compose.yml       # Docker Compose configuration
 ```
 
 ## License
